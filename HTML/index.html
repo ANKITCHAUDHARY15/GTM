@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <div>
+        <div>
+            <div>
+
+            </div>
+            <h1>Welcome in pafe content</h1>
+            <div class="js-tw-cta"> page content here</div>
+            <button> Click me</button>
+            <div>footer part</div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener("load", function () {
+            console.log("Window load event method invoked pushing tracking in datalayer");
+            dataLayer.push({
+                event: "CWNonInteractive",
+                cat: "TW_Banner_m",
+                act: "TW_Banner_m_Shown",
+                lab: "Toyota Glanza Countdown Banner",
+            });
+            console.log(dataLayer);
+            console.log("Window load event method execution finished");
+        });
+        var twCTA = document.querySelector(".js-tw-cta");
+        console.log("document.querySelector Result ");
+        console.dirxml(twCTA);
+        console.log("Result printed above");
+        if (twCTA) {
+            twCTA.addEventListener("click", function () {
+                console.log("Window click event method invoked pushing tracking in datalayer");
+                dataLayer.push({
+                    event: "CWInteractive",
+                    act: "Know More_clicked",
+                    cat: "TW_Banner_m",
+                    lab: "Toyota Glanza Countdown Banner",
+                });
+                console.log(dataLayer);
+                console.log("Window click event method execution finished");
+            });
+        }
+    </script>
+
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5X8GHPR');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X8GHPR" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>
